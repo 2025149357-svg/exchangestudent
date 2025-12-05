@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExchangeStudent - Home</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body class="bg-gray-50 relative">
+
+  <!-- NAVBAR -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold text-blue-700">
+      <a href="index.html" class="hover:text-blue-800">ExchangeStudent</a>
+    </h1>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center space-x-6 font-medium">
+
+      <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+
+      <!-- Programs Dropdown -->
+      <li class="relative group">
+        <button class="hover:text-blue-600 transition flex items-center">
+          Programs
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg py-2 opacity-0 
+                   invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+
+          <li><a href="programs.html" class="block px-4 py-2 hover:bg-gray-100">All Programs</a></li>
+          <li><a href="programs-japan.html" class="block px-4 py-2 hover:bg-gray-100">Japan</a></li>
+          <li><a href="programs-korea.html" class="block px-4 py-2 hover:bg-gray-100">Korea</a></li>
+          <li><a href="programs-indonesia.html" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a></li>
+          <li><a href="programs-uk.html" class="block px-4 py-2 hover:bg-gray-100">United Kingdom</a></li>
+
+        </ul>
+      </li>
+
+      <li><a href="about.html" class="hover:text-blue-600 transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
+      <li><a href="dashboard.html" class="hover:text-blue-600 transition">Dashboard</a></li>
+
+      <li>
+      </li>
+    </ul>
+
+    <!-- Mobile Button -->
+    <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="hidden md:hidden flex flex-col bg-white border-t py-4 px-6 space-y-3">
+
+    <a href="index.html" class="hover:text-blue-600">Home</a>
+
+    <!-- Mobile Programs Dropdown -->
+    <div class="border rounded-lg">
+
+      <button id="mobileProgramsBtn"
+              class="w-full px-3 py-2 flex justify-between items-center hover:text-blue-600">
+        Programs
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div id="mobileProgramsDropdown" class="hidden flex flex-col pl-5 py-2 space-y-2">
+        <a href="programs.html" class="hover:text-blue-600">All Programs</a>
+        <a href="programs-japan.html" class="hover:text-blue-600">Japan</a>
+        <a href="programs-korea.html" class="hover:text-blue-600">Korea</a>
+        <a href="programs-indonesia.html" class="hover:text-blue-600">Indonesia</a>
+        <a href="programs-uk.html" class="hover:text-blue-600">United Kingdom</a>
+      </div>
+
+    </div>
+
+    <a href="about.html" class="hover:text-blue-600">About</a>
+    <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
+
+    </a>
+  </div>
+</nav>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative h-96 overflow-hidden mt-20">
+    <!-- Horizontal Sliding Container  -->
+    <div class="horizontal-slider flex h-full">
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg1.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg2.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/rantau5.jpeg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg4.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg5.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+
+      <!-- duplicate for seamless loop -->
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg1.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg2.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/rantau5.jpeg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg4.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+      <div class="slide flex-shrink-0 h-full w-64">
+        <img src="images/bg5.jpg" class="h-full w-full object-cover rounded-lg" />
+      </div>
+    </div>
+
+    <!-- Overlay Text -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30 flex items-center justify-center text-center px-6">
+        <div class="text-white max-w-2xl">
+          <p class="inline-flex items-center px-3 py-1 mb-3 text-xs font-semibold rounded-full bg-white/10 border border-white/20">
+            ✈️ Over 20 partner universities worldwide
+          </p>
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Our Global Exchange Programs</h2>
+          <p class="text-sm md:text-lg text-gray-100 mb-5">
+            Discover international learning experiences that match your goals, budget, and future plans.
+          </p>
+          <a href="#program-list"
+             class="inline-flex items-center px-5 py-2.5 bg-blue-500 hover:bg-blue-600 rounded-full text-sm md:text-base font-semibold shadow-lg shadow-blue-500/40 transition">
+            Browse Programs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="mt-10">
+      <div class="max-w-7xl mx-auto px-6 grid gap-4 sm:grid-cols-3">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center">
+          <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Students</p>
+          <p class="text-3xl font-bold text-gray-900">120+</p>
+          <p class="text-xs text-gray-500 mt-1">sent abroad in the last 3 years</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center">
+          <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Partner Universities</p>
+          <p class="text-3xl font-bold text-gray-900">20+</p>
+          <p class="text-xs text-gray-500 mt-1">across Asia & Europe</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center">
+          <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">Visa Success</p>
+          <p class="text-3xl font-bold text-gray-900">98%</p>
+          <p class="text-xs text-gray-500 mt-1">approval rate for past cohorts</p>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- PROGRAM CARDS -->
+<section id="program-list" class="py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Available Programs</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Semester Abroad Card -->
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+        <h4 class="text-xl font-bold mb-2">
+          <i class="bi bi-flag text-4xl text-blue-600 mb-2 icon-animate"></i> Semester Abroad
+        </h4>
+        <p class="text-gray-600 mb-4">Spend a semester at a partner university abroad while earning credits towards your degree.</p>
+        <a href="register.html" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply Now</a>
+      </div>
+
+      <!-- Internship Program Card -->
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+        <h4 class="text-xl font-bold mb-2">
+          <i class="bi bi-briefcase text-4xl text-blue-600 mb-2 icon-animate"></i> Internship Program
+        </h4>
+        <p class="text-gray-600 mb-4">Gain international work experience through structured internships in top companies.</p>
+        <a href="register.html" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply Now</a>
+      </div>
+
+      <!-- Summer School Card -->
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+        <h4 class="text-xl font-bold mb-2">
+          <i class="bi bi-sun text-4xl text-blue-600 mb-2 icon-animate"></i> Summer School
+        </h4>
+        <p class="text-gray-600 mb-4">Short-term programs in global cities covering specialized subjects and cultural immersion.</p>
+        <a href="register.html" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply Now</a>
+      </div>
+
+      <!-- Full Degree Programs Card -->
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+        <h4 class="text-xl font-bold mb-2">
+          <i class="bi bi-book text-4xl text-blue-600 mb-2 icon-animate"></i> Full Degree Programs
+        </h4>
+        <p class="text-gray-600 mb-4">Pursue full undergraduate or graduate degrees at our partner universities worldwide.</p>
+        <a href="register.html" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply Now</a>
+      </div>
+
+      <!-- Language Exchange Card -->
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+        <h4 class="text-xl font-bold mb-2">
+          <i class="bi bi-chat text-4xl text-blue-600 mb-2 icon-animate"></i> Language Exchange
+        </h4>
+        <p class="text-gray-600 mb-4">Improve your language skills while studying in a foreign country with native speakers.</p>
+        <a href="register.html" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply Now</a>
+      </div>
+
+      <!-- Cultural Immersion Card -->
+      <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition">
+        <h4 class="text-xl font-bold mb-2">
+          <i class="bi bi-globe text-4xl text-blue-600 mb-2 icon-animate"></i> Cultural Immersion
+        </h4>
+        <p class="text-gray-600 mb-4">Experience local culture, traditions, and community projects abroad.</p>
+        <a href="register.html" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Apply Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section class="py-12" id="exchange-grid">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Program Details</h3>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Japan -->
+      <div class="bg-white p-6 rounded-2xl shadow border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-2">🇯🇵</span>
+          <h4 class="text-xl font-bold">Japan Exchange</h4>
+        </div>
+
+        <div class="space-y-2 text-sm text-gray-600">
+          <p><span class="font-semibold text-gray-900">Duration:</span> 6 months</p>
+          <p><span class="font-semibold text-gray-900">Fees:</span> RM 4,500</p>
+          <p><span class="font-semibold text-gray-900">Language:</span> Japanese</p>
+          <p><span class="font-semibold text-gray-900">City:</span> Osaka / Tokyo</p>
+        </div>
+
+        <a href="programs-japan.html" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Click Here</a>
+      </div>
+
+      <!-- Korea -->
+      <div class="bg-white p-6 rounded-2xl shadow border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-2">🇰🇷</span>
+          <h4 class="text-xl font-bold">Korea Exchange</h4>
+        </div>
+
+        <div class="space-y-2 text-sm text-gray-600">
+          <p><span class="font-semibold text-gray-900">Duration:</span> 1 semester</p>
+          <p><span class="font-semibold text-gray-900">Fees:</span> RM 3,800</p>
+          <p><span class="font-semibold text-gray-900">Language:</span> Korean</p>
+          <p><span class="font-semibold text-gray-900">City:</span> Seoul / Busan</p>
+        </div>
+
+        <a href="programs-korea.html" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Click Here</a>
+      </div>
+
+      <!-- UK -->
+      <div class="bg-white p-6 rounded-2xl shadow border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="flex items-center mb-4">
+          <span class="text-3xl mr-2">🇬🇧</span>
+          <h4 class="text-xl font-bold">United Kingdom Exchange</h4>
+        </div>
+
+        <div class="space-y-2 text-sm text-gray-600">
+          <p><span class="font-semibold text-gray-900">Duration:</span> 1 semester</p>
+          <p><span class="font-semibold text-gray-900">Fees:</span> RM 6,400</p>
+          <p><span class="font-semibold text-gray-900">Language:</span> English</p>
+          <p><span class="font-semibold text-gray-900">City:</span> London / Manchester</p>
+        </div>
+
+        <a href="programs-uk.html" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Click Here</a>
+      </div>
+
+      <!-- Indonesia -->
+      <div class="bg-white p-6 rounded-2xl shadow border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition md:col-span-3 flex justify-center w-full">
+        <div>
+          <div class="flex items-center mb-4">
+            <span class="text-3xl mr-2">🇮🇩</span>
+            <h4 class="text-xl font-bold">Indonesia Short Exchange</h4>
+          </div>
+
+          <div class="space-y-2 text-sm text-gray-600">
+            <p><span class="font-semibold text-gray-900">Duration:</span> 2 months</p>
+            <p><span class="font-semibold text-gray-900">Fees:</span> RM 1,800</p>
+            <p><span class="font-semibold text-gray-900">Language:</span> Bahasa Indonesia</p>
+            <p><span class="font-semibold text-gray-900">City:</span> Jakarta / Bandung</p>
+          </div>
+
+          <a href="programs-indonesia.html" class="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Click Here</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>© 2025 ExchangeStudent System</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

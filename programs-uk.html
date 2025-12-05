@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExchangeStudent - Home</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body class="bg-gray-50 relative">
+
+  <!-- NAVBAR -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold text-blue-700">
+      <a href="index.html" class="hover:text-blue-800">ExchangeStudent</a>
+    </h1>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center space-x-6 font-medium">
+
+      <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
+
+      <!-- Programs Dropdown -->
+      <li class="relative group">
+        <button class="hover:text-blue-600 transition flex items-center">
+          Programs
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg py-2 opacity-0 
+                   invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+
+          <li><a href="programs.html" class="block px-4 py-2 hover:bg-gray-100">All Programs</a></li>
+          <li><a href="programs-japan.html" class="block px-4 py-2 hover:bg-gray-100">Japan</a></li>
+          <li><a href="programs-korea.html" class="block px-4 py-2 hover:bg-gray-100">Korea</a></li>
+          <li><a href="programs-indonesia.html" class="block px-4 py-2 hover:bg-gray-100">Indonesia</a></li>
+          <li><a href="programs-uk.html" class="block px-4 py-2 hover:bg-gray-100">United Kingdom</a></li>
+
+        </ul>
+      </li>
+
+      <li><a href="about.html" class="hover:text-blue-600 transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
+      <li><a href="dashboard.html" class="hover:text-blue-600 transition">Dashboard</a></li>
+
+      <li>
+        <a href="login.html"
+          class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+          Login
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Button -->
+    <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="hidden md:hidden flex flex-col bg-white border-t py-4 px-6 space-y-3">
+
+    <a href="index.html" class="hover:text-blue-600">Home</a>
+
+    <!-- Mobile Programs Dropdown -->
+    <div class="border rounded-lg">
+
+      <button id="mobileProgramsBtn"
+              class="w-full px-3 py-2 flex justify-between items-center hover:text-blue-600">
+        Programs
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div id="mobileProgramsDropdown" class="hidden flex flex-col pl-5 py-2 space-y-2">
+        <a href="programs.html" class="hover:text-blue-600">All Programs</a>
+        <a href="programs-japan.html" class="hover:text-blue-600">Japan</a>
+        <a href="programs-korea.html" class="hover:text-blue-600">Korea</a>
+        <a href="programs-indonesia.html" class="hover:text-blue-600">Indonesia</a>
+        <a href="programs-uk.html" class="hover:text-blue-600">United Kingdom</a>
+      </div>
+
+    </div>
+
+    <a href="about.html" class="hover:text-blue-600">About</a>
+    <a href="contact.html" class="hover:text-blue-600">Contact</a>
+    <a href="dashboard.html" class="hover:text-blue-600">Dashboard</a>
+
+  
+  </div>
+</nav>
+
+  </nav>
+
+<!-- HERO (Horizontal Slider) -->
+<section class="relative h-96 overflow-hidden mt-20">
+  <div class="horizontal-slider flex h-full">
+
+    <!-- Original slides -->
+<div class="slide flex-shrink-0 h-full w-64">
+  <img src="images/edinburghstudent.jpg" alt="Students at a Edinburgh university" 
+       class="h-full w-full object-cover rounded-lg">
+</div>
+
+<div class="slide flex-shrink-0 h-full w-64">
+  <img src="images/universityedinburgh.jpg" alt="The University of Edinburgh" 
+       class="h-full w-full object-cover rounded-lg">
+</div>
+
+<div class="slide flex-shrink-0 h-full w-64">
+  <img src="images/manchasterskyline.jpg" alt="City scenery near Manchester universities" 
+       class="h-full w-full object-cover rounded-lg">
+</div>
+
+<!-- Duplicate slides -->
+
+<div class="slide flex-shrink-0 h-full w-64">
+  <img src="images/edinburghstudent.jpg" alt="Students at a Edinburgh university" class="h-full w-full object-cover rounded-lg">
+</div>
+
+<div class="slide flex-shrink-0 h-full w-64">
+  <img src="images/universityedinburgh.jpg" alt="The university of Edinburgh" class="h-full w-full object-cover rounded-lg">
+</div>
+
+<div class="slide flex-shrink-0 h-full w-64">
+  <img src="images/manchasterskyline.jpg" alt="City scenery near Manchester universities" class="h-full w-full object-cover rounded-lg">
+</div>
+
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/30
+              flex items-center justify-center text-center px-6">
+    <div class="text-white max-w-2xl">
+      <p class="inline-flex items-center px-3 py-1 mb-3 text-xs font-semibold
+                rounded-full bg-white/10 border border-white/20">
+        🇬🇧 Study Abroad • United Kingdom
+      </p>
+
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-3">
+         Explore Academic Excellence in the UK
+      </h2>
+
+      <p class="text-sm md:text-lg text-gray-100 mb-5">
+        Experience world-class universities, vibrant culture, and global networking opportunities.
+      </p>
+
+      <a href="register.html"
+         class="inline-flex items-center px-5 py-2.5 bg-blue-500 hover:bg-blue-600 rounded-full
+                text-sm md:text-base font-semibold shadow-lg shadow-blue-500/40 transition">
+        Apply Now
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- QUICK STATS -->
+  <section class="bg-white py-10">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 px-6 text-center">
+
+      <div class="group p-5 rounded-2xl shadow-sm border bg-gray-50
+                  hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
+        <i class="bi bi-people-fill text-blue-600 text-3xl mb-2
+                  transition-transform duration-300 group-hover:scale-110"></i>
+        <p class="text-xs font-semibold text-blue-600 tracking-wide uppercase mb-1">Students Sent</p>
+        <h3 class="text-3xl font-bold text-gray-900">70+</h3>
+        <p class="text-xs text-gray-500 mt-1">to UK institutions</p>
+      </div>
+
+      <div class="group p-5 rounded-2xl shadow-sm border bg-gray-50
+                  hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
+        <i class="bi bi-building text-blue-600 text-3xl mb-2
+                  transition-transform duration-300 group-hover:scale-110"></i>
+        <p class="text-xs font-semibold text-blue-600 tracking-wide uppercase mb-1">Partner Universities</p>
+        <h3 class="text-3xl font-bold text-gray-900">8</h3>
+        <p class="text-xs text-gray-500 mt-1">across England & Scotland</p>
+      </div>
+
+      <div class="group p-5 rounded-2xl shadow-sm border bg-gray-50
+                  hover:shadow-lg hover:scale-[1.03] transition-all duration-300">
+        <i class="bi bi-shield-check text-blue-600 text-3xl mb-2
+                  transition-transform duration-300 group-hover:scale-110"></i>
+        <p class="text-xs font-semibold text-blue-600 tracking-wide uppercase mb-1">Visa Approval Rate</p>
+        <h3 class="text-3xl font-bold text-gray-900">96%</h3>
+        <p class="text-xs text-gray-500 mt-1">with structured guidance</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROGRAM OVERVIEW -->
+  <section class="py-12 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-3xl font-bold mb-3">Program Overview</h2>
+        <p class="text-gray-700 text-sm md:text-base">
+          The UK Study Abroad track is designed for students seeking rigorous academic exposure and strong global recognition.
+          You can choose from credit-bearing semesters, research attachments, or short-term summer schools coordinated with UK partners.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="group bg-white p-8 rounded-xl shadow
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-book-half text-blue-600 text-3xl mb-3
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <h3 class="text-xl font-bold mb-2">Semester / Year Abroad</h3>
+          <p class="text-gray-600 mb-2 text-sm">
+            Spend one semester or a full academic year at a UK partner university with mapped modules.
+          </p>
+          <p class="text-xs text-gray-500">Duration: 1–2 semesters • Level: Undergraduate</p>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl shadow
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-file-earmark-text text-blue-600 text-3xl mb-3
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <h3 class="text-xl font-bold mb-2">Research Attachment</h3>
+          <p class="text-gray-600 mb-2 text-sm">
+            Work with academic supervisors on research projects aligned to your field of study.
+          </p>
+          <p class="text-xs text-gray-500">Duration: 3–6 months • Level: Undergrad / Postgrad</p>
+        </div>
+
+        <div class="group bg-white p-8 rounded-xl shadow
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-sun text-blue-600 text-3xl mb-3
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <h3 class="text-xl font-bold mb-2">Summer School</h3>
+          <p class="text-gray-600 mb-2 text-sm">
+            Join short academic and cultural programmes during UK summer terms.
+          </p>
+          <p class="text-xs text-gray-500">Duration: 2–6 weeks • Level: All levels</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER UNIVERSITIES -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Partner Universities in the UK</h2>
+        <p class="text-gray-700 text-sm md:text-base max-w-2xl mx-auto">
+          Our UK partners are recognised for teaching quality, research strength, and comprehensive support for international students.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="group bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl transition-all duration-300 text-center">
+          <img src="images/ucl.png" alt="Partner University Logo" class="h-16 mx-auto mb-4">
+          <h3 class="text-lg font-semibold">University College London (UCL)</h3>
+          <p class="text-gray-600 text-sm mt-1">Sciences, Engineering, Social Sciences</p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl transition-all duration-300 text-center">
+          <img src="images/manchasterlogo.png" alt="Partner University Logo" class="h-16 mx-auto mb-4">
+          <h3 class="text-lg font-semibold">University of Manchester</h3>
+          <p class="text-gray-600 text-sm mt-1">Business, Engineering, Humanities</p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-xl transition-all duration-300 text-center">
+          <img src="images/edinlogo.png" alt="Partner University Logo" class="h-16 mx-auto mb-4">
+          <h3 class="text-lg font-semibold">University of Edinburgh</h3>
+          <p class="text-gray-600 text-sm mt-1">Law, Social Sciences, Arts & Culture</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY UK -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">Why Study in the UK?</h2>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="group bg-white p-6 rounded-lg shadow flex items-start space-x-3
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-mortarboard text-2xl text-blue-600
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <p class="text-sm md:text-base">
+            Graduate with credits from universities that rank strongly in global league tables.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-lg shadow flex items-start space-x-3
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-people text-2xl text-blue-600
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <p class="text-sm md:text-base">
+            Study in a multicultural classroom with classmates and lecturers from around the world.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-lg shadow flex items-start space-x-3
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-book text-2xl text-blue-600
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <p class="text-sm md:text-base">
+            Access world-class libraries, labs, and digital resources to support independent learning.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-lg shadow flex items-start space-x-3
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <i class="bi bi-bus-front text-2xl text-blue-600
+                    transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-700"></i>
+          <p class="text-sm md:text-base">
+            Explore historic cities, museums, theatres, and cultural attractions with efficient public transport.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPORTANT INFORMATION -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Important Information</h2>
+        <p class="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
+          Before applying, please review the main requirements and support items for the UK Study Abroad track.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="group bg-white p-6 rounded-xl shadow-sm border
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="bi bi-passport text-blue-700 text-xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-sm md:text-base">UK Student Visa</h3>
+          </div>
+          <p class="text-gray-600 text-sm">
+            A valid UK student visa is required for semester / year abroad and longer programmes. Guidance will be provided after acceptance.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow-sm border
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="bi bi-house-door text-blue-700 text-xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-sm md:text-base">Accommodation</h3>
+          </div>
+          <p class="text-gray-600 text-sm">
+            Students may stay in campus halls, private student residences, or approved homestays depending on location and availability.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow-sm border
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="bi bi-cash-stack text-blue-700 text-xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-sm md:text-base">Financial Planning</h3>
+          </div>
+          <p class="text-gray-600 text-sm">
+            You should plan for tuition (if applicable), accommodation, living expenses, transport, and emergency funds. Limited funding may be offered.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow-sm border
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="bi bi-chat-square-text text-blue-700 text-xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-sm md:text-base">Language Requirements</h3>
+          </div>
+          <p class="text-gray-600 text-sm">
+            English is the main medium of instruction. Some hosts may request proof of English proficiency (e.g. IELTS / equivalent).
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow-sm border
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="bi bi-heart-pulse text-blue-700 text-xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-sm md:text-base">Health & Insurance</h3>
+          </div>
+          <p class="text-gray-600 text-sm">
+            Health insurance and compliance with UK healthcare and safety requirements are compulsory for all participants.
+          </p>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow-sm border
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+              <i class="bi bi-info-circle text-blue-700 text-xl"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-sm md:text-base">Pre-departure Briefing</h3>
+          </div>
+          <p class="text-gray-600 text-sm">
+            All students must attend a pre-departure briefing on academic expectations, culture, safety, and living arrangements in the UK.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION PROCESS -->
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold mb-3">Application Process</h2>
+        <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+          The UK application flow is structured into four stages. You will receive updates at each milestone.
+        </p>
+      </div>
+
+      <div class="relative max-w-3xl mx-auto">
+
+        <!-- Vertical line -->
+        <div class="absolute left-5 top-0 h-full border-l-2 border-blue-100 md:left-1/2"></div>
+
+        <div class="space-y-8">
+
+          <!-- Step 1 -->
+          <div class="relative flex gap-4 md:gap-6 md:items-center">
+            <div class="relative z-10 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold md:mx-auto md:left-[-20px]">
+              1
+            </div>
+            <div class="bg-gray-50 rounded-xl shadow-sm border p-4 md:p-5 flex-1 md:ml-6">
+              <h3 class="font-semibold text-gray-900 mb-1 text-sm md:text-base">
+                Online Application
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Submit the online form, choose the UK Study Abroad track, and indicate your preferred host universities and intake.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative flex gap-4 md:gap-6 md:items-center">
+            <div class="relative z-10 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold md:mx-auto md:left-[-20px]">
+              2
+            </div>
+            <div class="bg-gray-50 rounded-xl shadow-sm border p-4 md:p-5 flex-1 md:ml-6">
+              <h3 class="font-semibold text-gray-900 mb-1 text-sm md:text-base">
+                Academic & Eligibility Review
+              </h3>
+              <p class="text-gray-600 text-sm">
+                We review your CGPA, programme fit, language requirements, and supporting documents according to host criteria.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative flex gap-4 md:gap-6 md:items-center">
+            <div class="relative z-10 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold md:mx-auto md:left-[-20px]">
+              3
+            </div>
+            <div class="bg-gray-50 rounded-xl shadow-sm border p-4 md:p-5 flex-1 md:ml-6">
+              <h3 class="font-semibold text-gray-900 mb-1 text-sm md:text-base">
+                Nomination & Offer
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Shortlisted students are nominated to UK partners and receive formal offer letters or acceptance documents.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative flex gap-4 md:gap-6 md:items-center">
+            <div class="relative z-10 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold md:mx-auto md:left-[-20px]">
+              4
+            </div>
+            <div class="bg-gray-50 rounded-xl shadow-sm border p-4 md:p-5 flex-1 md:ml-6">
+              <h3 class="font-semibold text-gray-900 mb-1 text-sm md:text-base">
+                Visa, Briefing & Departure
+              </h3>
+              <p class="text-gray-600 text-sm">
+                After accepting the offer, you proceed with visa application, attend the pre-departure briefing, and finalise your travel plans.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT EXPERIENCES -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-2">Student Experiences</h2>
+      <div class="w-16 h-1 bg-blue-600 mx-auto mb-10 rounded-full"></div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="group bg-white p-6 rounded-xl shadow
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <p class="text-gray-600 italic mb-4 text-sm">
+            "Lectures in the UK were very interactive. I became more confident speaking and presenting."
+          </p>
+          <h4 class="font-bold text-sm">– Aiman, Malaysia</h4>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <p class="text-gray-600 italic mb-4 text-sm">
+            "Living in a multicultural city opened my eyes to different cultures and perspectives."
+          </p>
+          <h4 class="font-bold text-sm">– Priya, Singapore</h4>
+        </div>
+
+        <div class="group bg-white p-6 rounded-xl shadow
+                    hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <p class="text-gray-600 italic mb-4 text-sm">
+            "Weekend trips to nearby cities and museums made my semester abroad unforgettable."
+          </p>
+          <h4 class="font-bold text-sm">– Hakim, Brunei</h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+    <p>© 2025 ExchangeStudent System • All rights reserved</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

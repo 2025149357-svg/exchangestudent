@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExchangeStudent Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body class="bg-gray-100 font-inter">
+
+  <!-- ======================
+       MOBILE OVERLAY
+  ======================= -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-black/40 hidden z-40"></div>
+
+  <!-- ======================
+       MOBILE SIDEBAR MENU
+  ======================= -->
+  <div id="mobileMenu" class="md:hidden fixed top-0 left-0 w-72 h-full bg-white shadow-xl z-50 overflow-y-auto">
+
+    <!-- Header + Close Button -->
+    <div class="flex items-center justify-between p-5 border-b">
+      <div>
+        <h1 class="text-xl font-bold text-blue-700">ExchangeStudent</h1>
+        <p class="text-xs text-gray-500">Student Portal</p>
+      </div>
+
+      <button id="closeMobileMenu" class="text-2xl text-gray-600 hover:text-black leading-none">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="p-4 space-y-3 text-base">
+
+      <a href="dashboard.html" class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+        <i class="bi bi-speedometer2 mr-2"></i> Dashboard
+      </a>
+
+      <a href="index.html" class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+        <i class="bi bi-house-door mr-2"></i> Home
+      </a>
+
+      <!-- Mobile Programs Dropdown -->
+      <button id="mobileProgramsBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-gray-100">
+        <span><i class="bi bi-globe2 mr-2"></i> Programs</span>
+        <i class="bi bi-chevron-down"></i>
+      </button>
+
+      <div id="mobileProgramsDropdown" class="hidden ml-4 space-y-2 text-gray-600">
+        <a href="programs.html" class="block py-1">All Programs</a>
+        <a href="programs-japan.html" class="block py-1">Japan</a>
+        <a href="programs-korea.html" class="block py-1">Korea</a>
+        <a href="programs-indonesia.html" class="block py-1">Indonesia</a>
+        <a href="programs-uk.html" class="block py-1">United Kingdom</a>
+      </div>
+
+      <a href="about.html" class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+        <i class="bi bi-info-circle mr-2"></i> About
+      </a>
+
+      <a href="contact.html" class="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100">
+        <i class="bi bi-envelope mr-2"></i> Contact
+      </a>
+
+    </nav>
+
+    <!-- LOGOUT BOX -->
+    <div class="mt-5 px-4 mb-6">
+      <div class="bg-gray-50 rounded-xl p-4 shadow-sm border border-gray-200">
+
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shadow-sm">
+            <i class="bi bi-person-fill text-blue-700 text-xl"></i>
+          </div>
+
+          <div>
+            <p class="font-semibold text-gray-800 leading-tight">Student User</p>
+            <p class="text-xs text-gray-500">Logged in</p>
+          </div>
+        </div>
+
+        <a href="login.html"
+          class="w-full block text-center py-2 rounded-lg bg-red-50 text-red-600 font-medium hover:bg-red-100 transition">
+          <i class="bi bi-box-arrow-right mr-1"></i> Logout
+        </a>
+      </div>
+    </div>
+
+  </div> <!-- end of mobileMenu -->
+
+  <!-- ======================
+       PAGE WRAPPER
+  ======================= -->
+  <div class="flex min-h-screen">
+
+    <!-- ======================
+         DESKTOP SIDEBAR
+    ======================= -->
+    <aside class="hidden md:flex md:flex-col w-64 bg-white shadow-lg border-r border-gray-100">
+
+      <div class="px-6 py-5 border-b border-gray-100">
+        <h1 class="text-xl font-bold text-blue-700">ExchangeStudent</h1>
+        <p class="text-xs text-gray-500">Student Portal</p>
+      </div>
+
+      <nav class="flex-1 px-4 py-4 space-y-4">
+
+        <div>
+          <p class="text-[11px] text-gray-400 uppercase mb-1 px-3">Navigation</p>
+
+          <a href="dashboard.html"
+             class="sidebar-link flex items-center px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-semibold">
+            <i class="bi bi-speedometer2 mr-2"></i> Dashboard
+          </a>
+
+          <a href="index.html"
+             class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-house-door mr-2"></i> Home
+          </a>
+        </div>
+
+        <div>
+          <p class="text-[11px] text-gray-400 uppercase mt-3 mb-1 px-3">Programs</p>
+
+          <a href="programs.html" class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-globe2 mr-2"></i> All Programs
+          </a>
+
+          <a href="programs-japan.html" class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-flag mr-2"></i> Japan
+          </a>
+
+          <a href="programs-korea.html" class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-flag mr-2"></i> Korea
+          </a>
+
+          <a href="programs-indonesia.html" class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-flag mr-2"></i> Indonesia
+          </a>
+
+          <a href="programs-uk.html" class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-flag mr-2"></i> United Kingdom
+          </a>
+        </div>
+
+        <div>
+          <p class="text-[11px] text-gray-400 uppercase mt-3 mb-1 px-3">Information</p>
+
+          <a href="about.html"
+             class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-info-circle mr-2"></i> About
+          </a>
+
+          <a href="contact.html"
+             class="sidebar-link flex items-center px-3 py-2 rounded-lg hover:bg-gray-50">
+            <i class="bi bi-envelope mr-2"></i> Contact
+          </a>
+        </div>
+
+      </nav>
+
+      <div class="px-4 py-4 border-t border-gray-100">
+        <p class="text-gray-500 mb-2">Logged in as</p>
+
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+            <i class="bi bi-person text-blue-700"></i>
+          </div>
+
+          <div>
+            <p class="font-semibold">Student User</p>
+            <a href="login.html" class="text-xs text-blue-600 hover:underline">Logout</a>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ======================
+         MAIN CONTENT
+    ======================= -->
+    <main class="flex-1 p-6">
+
+      <!-- HERO BANNER -->
+      <div class="relative w-full h-52 md:h-64 lg:h-80 rounded-2xl overflow-hidden shadow-xl mb-8 group">
+        <img src="images/rantau4.jpeg"
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+          <h1 class="text-3xl md:text-4xl font-bold drop-shadow-xl">Welcome to Your Dashboard</h1>
+          <p class="text-sm md:text-lg mt-2 opacity-90">Track your applications, progress and updates</p>
+        </div>
+      </div>
+
+      <!-- TOPBAR -->
+      <nav class="flex flex-col md:flex-row justify-between items-center mb-6 bg-white shadow p-4 rounded-xl">
+
+        <div class="flex items-center gap-4 w-full md:w-auto mb-2 md:mb-0">
+          <button id="sidebarToggle" class="md:hidden p-2 rounded-full bg-gray-100 hover:bg-gray-200">
+            <i class="bi bi-list text-lg"></i>
+          </button>
+          <h1 class="text-2xl font-bold text-gray-800">Dashboard</h1>
+        </div>
+
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <div class="relative flex-1 md:flex-auto">
+            <input id="searchInput" type="text" placeholder="Search applications..."
+              class="w-full md:w-64 px-4 py-2 rounded-full border border-gray-300 focus:ring-2 focus:ring-blue-500 text-sm">
+            <i class="bi bi-search absolute right-3 top-2.5 text-gray-400"></i>
+          </div>
+
+          <button id="darkModeToggle"
+            class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center">
+            <i class="bi bi-moon-fill text-gray-600"></i>
+          </button>
+        </div>
+
+      </nav>
+
+      <!-- KPI CARDS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 mb-8">
+
+        <div class="rounded-2xl p-6 text-center text-white shadow-lg bg-gradient-to-br from-blue-500 to-blue-700">
+          <i class="bi bi-send-fill text-4xl mb-3"></i>
+          <p class="text-sm uppercase opacity-70">Submitted</p>
+          <p id="kpiSubmittedCount" class="text-3xl font-extrabold">5</p>
+        </div>
+
+        <div class="rounded-2xl p-6 text-center text-white shadow-lg bg-gradient-to-br from-green-400 to-green-600">
+          <i class="bi bi-check-circle-fill text-4xl mb-3"></i>
+          <p class="text-sm uppercase opacity-70">Approved</p>
+          <p id="kpiApprovedCount" class="text-3xl font-extrabold">2</p>
+        </div>
+
+        <div class="rounded-2xl p-6 text-center text-white shadow-lg bg-gradient-to-br from-yellow-400 to-yellow-600">
+          <i class="bi bi-hourglass-split text-4xl mb-3"></i>
+          <p class="text-sm uppercase opacity-70">Pending</p>
+          <p id="kpiPendingCount" class="text-3xl font-extrabold">3</p>
+        </div>
+
+        <div class="rounded-2xl p-6 text-center text-white shadow-lg bg-gradient-to-br from-red-400 to-red-600">
+          <i class="bi bi-bell-fill text-4xl mb-3"></i>
+          <p class="text-sm uppercase opacity-70">Notifications</p>
+          <p class="text-3xl font-extrabold">4</p>
+        </div>
+
+        <div class="rounded-2xl p-6 text-center text-white shadow-lg bg-gradient-to-br from-purple-500 to-purple-700">
+          <i class="bi bi-person-check-fill text-4xl mb-3"></i>
+          <p class="text-sm uppercase opacity-70">Profile</p>
+          <p class="text-3xl font-extrabold">80%</p>
+        </div>
+
+        <div class="rounded-2xl p-6 text-center text-white shadow-lg bg-gradient-to-br from-teal-400 to-teal-600">
+          <i class="bi bi-building-fill text-4xl mb-3"></i>
+          <p class="text-sm uppercase opacity-70">Universities</p>
+          <p class="text-3xl font-extrabold">5</p>
+        </div>
+
+      </div>
+
+
+      <!-- QUICK ACTIONS -->
+      <div class="flex flex-wrap gap-4 mb-10">
+
+        <button class="flex-1 md:flex-auto px-6 py-3 rounded-xl shadow-lg text-white font-semibold hover:scale-105 
+                      bg-gradient-to-r from-blue-500 to-blue-700"
+          data-bs-toggle="modal" data-bs-target="#newApplicationModal">
+          <i class="bi bi-send-fill me-2"></i> New Application
+        </button>
+
+        <button class="flex-1 md:flex-auto px-6 py-3 rounded-xl shadow-lg text-white font-semibold hover:scale-105 
+                      bg-gradient-to-r from-purple-500 to-purple-700"
+          data-bs-toggle="modal" data-bs-target="#updateProfileModal">
+          <i class="bi bi-person-check-fill me-2"></i> Update Profile
+        </button>
+
+      </div>
+
+
+      <!-- CHARTS -->
+      <section class="mb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <div class="bg-white shadow-lg rounded-xl p-4">
+            <h3 class="text-lg font-bold mb-3">Students Per Country</h3>
+            <canvas id="studentsCountryChart" class="w-full max-h-[250px]"></canvas>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-xl p-4">
+            <h3 class="text-lg font-bold mb-3">Programs Per Country</h3>
+            <canvas id="programsCountryChart" class="w-full max-h-[250px]"></canvas>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-xl p-4 lg:col-span-2">
+            <h3 class="text-lg font-bold mb-3">Application Status Summary</h3>
+            <canvas id="statusChart" class="w-full max-h-[250px]"></canvas>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- APPLICATIONS TABLE -->
+      <section class="bg-white shadow-lg rounded-xl p-5 mb-8">
+
+        <h3 class="text-lg font-bold mb-4">Your Applications</h3>
+
+        <div class="table-responsive">
+          <table class="table table-hover align-middle" id="applicationsTable">
+            <thead class="table-light">
+              <tr>
+                <th>#</th>
+                <th>Program</th>
+                <th>University</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="applicationsTableBody">
+              <tr>
+                <td>1</td>
+                <td>Engineering</td>
+                <td>Seoul National University</td>
+                <td><span class="badge bg-success">Approved</span></td>
+                <td>
+                  <a href="programs-japan.html" class="btn btn-primary btn-sm">View</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Business Management</td>
+                <td>Universitas Indonesia</td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                <td>
+                  <a href="programs-indonesia.html" class="btn btn-primary btn-sm">View</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>Medicine</td>
+                <td>Kyoto University</td>
+                <td><span class="badge bg-danger">Rejected</span></td>
+                <td>
+                  <a href="programs-japan.html" class="btn btn-primary btn-sm">View</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>Engineering</td>
+                <td>Institut Teknologi Bandung</td>
+                <td><span class="badge bg-success">Approved</span></td>
+                <td>
+                  <a href="programs-indonesia.html" class="btn btn-primary btn-sm">View</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>Business Management</td>
+                <td>University of Manchester</td>
+                <td><span class="badge bg-success">Approved</span></td>
+                <td>
+                  <a href="programs-uk.html" class="btn btn-primary btn-sm">View</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>Law Studies</td>
+                <td>University of Edinburgh</td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                <td>
+                  <a href="programs-uk.html" class="btn btn-primary btn-sm">View</a>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </section>
+
+
+      <!-- RECENT ACTIVITIES -->
+      <section class="bg-white shadow-lg rounded-xl p-6 mb-10">
+
+        <h3 class="text-lg font-bold mb-6 text-gray-800">Recent Activities</h3>
+
+        <div class="relative pl-10 space-y-10">
+          <div class="absolute top-0 left-4 w-1 bg-gray-200 rounded-full h-full"></div>
+
+          <div class="relative flex gap-4">
+            <div class="absolute left-3 top-2 w-3 h-3 bg-blue-600 rounded-full border-4 border-white"></div>
+            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center shadow">
+              <i class="bi bi-send-fill text-blue-600 text-xl"></i>
+            </div>
+            <div>
+              <p class="font-semibold">Application Submitted</p>
+              <p class="text-sm text-gray-600">Japan • Osaka University</p>
+              <p class="text-xs text-blue-600 mt-1">2 days ago</p>
+            </div>
+          </div>
+
+          <div class="relative flex gap-4">
+            <div class="absolute left-3 top-2 w-3 h-3 bg-green-600 rounded-full border-4 border-white"></div>
+            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center shadow">
+              <i class="bi bi-check-circle-fill text-green-700 text-xl"></i>
+            </div>
+            <div>
+              <p class="font-semibold">Application Approved</p>
+              <p class="text-sm text-gray-600">UK • University of Manchester</p>
+              <p class="text-xs text-green-600 mt-1">1 day ago</p>
+            </div>
+          </div>
+
+          <div class="relative flex gap-4">
+            <div class="absolute left-3 top-2 w-3 h-3 bg-purple-600 rounded-full border-4 border-white"></div>
+            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center shadow">
+              <i class="bi bi-journal-check text-purple-700 text-xl"></i>
+            </div>
+            <div>
+              <p class="font-semibold">Document Uploaded</p>
+              <p class="text-sm text-gray-600">Korea • Seoul National University</p>
+              <p class="text-xs text-purple-600 mt-1">3 days ago</p>
+            </div>
+          </div>
+
+          <div class="relative flex gap-4">
+            <div class="absolute left-3 top-2 w-3 h-3 bg-yellow-500 rounded-full border-4 border-white"></div>
+            <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center shadow">
+              <i class="bi bi-bell-fill text-yellow-600 text-xl"></i>
+            </div>
+            <div>
+              <p class="font-semibold">Interview Scheduled</p>
+              <p class="text-sm text-gray-600">Indonesia • Universitas Indonesia</p>
+              <p class="text-xs text-yellow-600 mt-1">5 hours ago</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- APPLICATIONS OVER TIME -->
+      <section class="bg-white shadow-lg rounded-xl p-4 mb-10">
+        <h3 class="text-lg font-bold mb-3">Applications Over Time</h3>
+
+        <div class="flex flex-wrap gap-3 mb-4 border-b pb-3">
+          <button class="timeTab activeTab" data-range="daily">
+            <i class="bi bi-calendar-day"></i> Daily
+          </button>
+
+          <button class="timeTab" data-range="weekly">
+            <i class="bi bi-calendar-week"></i> Weekly
+          </button>
+
+          <button class="timeTab" data-range="monthly">
+            <i class="bi bi-calendar-month"></i> Monthly
+          </button>
+
+          <button class="timeTab" data-range="yearly">
+            <i class="bi bi-calendar-range"></i> Yearly
+          </button>
+        </div>
+
+        <canvas id="applicationsOverTimeChart" style="max-height: 280px;"></canvas>
+      </section>
+
+
+      <!-- New Application Modal -->
+      <div class="modal fade" id="newApplicationModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content rounded-2xl shadow-2xl border-0 overflow-hidden">
+
+            <div class="modal-header bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+              <h5 class="modal-title text-lg font-semibold">New Application</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body p-4">
+              <form id="newApplicationForm" class="space-y-3">
+
+                <div>
+                  <label class="form-label font-medium">Program</label>
+                  <input type="text" id="programName" class="form-control rounded-xl shadow-sm"
+                    placeholder="eg. Engineering Exchange" required>
+                </div>
+
+                <div>
+                  <label class="form-label font-medium">University</label>
+                  <input type="text" id="universityName" class="form-control rounded-xl shadow-sm"
+                    placeholder="eg. Seoul National University" required>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="modal-footer bg-gray-50 gap-2">
+              <button type="button" class="btn btn-light px-4 py-2 rounded-lg" data-bs-dismiss="modal">Cancel</button>
+
+              <button type="submit" form="newApplicationForm"
+                class="btn text-white px-4 py-2 rounded-lg shadow bg-gradient-to-r from-blue-600 to-blue-700 hover:opacity-90">
+                Submit Application
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Update Profile Modal -->
+      <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-2xl shadow-2xl border-0 overflow-hidden">
+
+            <div class="modal-header bg-gradient-to-r from-purple-600 to-pink-500 text-white">
+              <h5 class="modal-title text-lg font-semibold">Update Profile</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body p-4">
+              <form id="updateProfileForm" class="space-y-3">
+
+                <div>
+                  <label class="form-label font-medium">Name</label>
+                  <input type="text" id="profileName" class="form-control rounded-xl shadow-sm" placeholder="Your Name"
+                    required>
+                </div>
+
+                <div>
+                  <label class="form-label font-medium">Email</label>
+                  <input type="email" id="profileEmail" class="form-control rounded-xl shadow-sm"
+                    placeholder="your@email.com" required>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="modal-footer bg-gray-50 gap-2">
+              <button type="button" class="btn btn-light px-4 py-2 rounded-lg" data-bs-dismiss="modal">Cancel</button>
+
+              <button type="submit" form="updateProfileForm"
+                class="btn text-white px-4 py-2 rounded-lg shadow bg-gradient-to-r from-purple-600 to-purple-700 hover:opacity-90">
+                Save Changes
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
