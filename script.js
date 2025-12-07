@@ -314,7 +314,9 @@ if (document.getElementById("applicationsOverTimeChart")) {
   });
 }
 
-// LOGIN JS 
+// ----------------------------
+// LOGIN FORM
+// ----------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -401,7 +403,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+// ----------------------------
 // REGISTER FORM
+// ----------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
 
